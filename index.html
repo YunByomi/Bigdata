@@ -7,7 +7,7 @@
     <title>Document</title>
 </head>
 <body>
-    <div>Teachable Machine Image Model</div>
+    <div>" 야채 판별 프로그램 "</div>
 <button type="button" onclick="init()">Start</button>
 <div id="webcam-container"></div>
 <div id="label-container"></div>
@@ -59,11 +59,32 @@
     async function predict() {
         // predict can take in an image, video or canvas html element
         const prediction = await model.predict(webcam.canvas);
-        for (let i = 0; i < maxPredictions; i++) {
-            const classPrediction =
-                prediction[i].className + ": " + prediction[i].probability.toFixed(2);
-            labelContainer.childNodes[i].innerHTML = classPrediction;
+        if(prediction[0].className=="apple"&& prediction[0].probability.toFixed(2) == 1.00){
+            labelContainer.childNodes[0].innerHTML = "계란입니다."
         }
+        else if(prediction[1].className=="apple"&& prediction[1].probability.toFixed(2) == 1.00){
+            labelContainer.childNodes[0].innerHTML = "고추입니다."
+        }
+        else if(prediction[2].className=="apple"&& prediction[2].probability.toFixed(2) == 1.00){
+            labelContainer.childNodes[0].innerHTML = "양파입니다."
+        }
+        else if(prediction[3].className=="apple"&& prediction[3].probability.toFixed(2) == 1.00){
+            labelContainer.childNodes[0].innerHTML = "당근입니다."
+        }
+        else if(prediction[4].className=="apple"&& prediction[4].probability.toFixed(2) == 1.00){
+            labelContainer.childNodes[0].innerHTML = "대파입니다."
+        }
+        else if(prediction[5].className=="apple"&& prediction[5].probability.toFixed(2) == 1.00){
+            labelContainer.childNodes[0].innerHTML = "마늘입니다."
+        }
+        else{
+            labelContainer.childNodes[0].innerHTML = "알수없습니다."
+        }
+        // for (let i = 0; i < maxPredictions; i++) {
+        //     const classPrediction =
+        //         prediction[i].className + ": " + prediction[i].probability.toFixed(2);
+        //     labelContainer.childNodes[i].innerHTML = classPrediction;
+        // }
     }
 </script>
 
