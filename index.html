@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>야채 판별 프로그램</title>
 </head>
 <body>
     <div>" 야채 판별 프로그램 "</div>
@@ -59,22 +59,22 @@
     async function predict() {
         // predict can take in an image, video or canvas html element
         const prediction = await model.predict(webcam.canvas);
-        if(prediction[0].className=="apple"&& prediction[0].probability.toFixed(2) == 1.00){
+        if(prediction[0].className=="계란"&& prediction[0].probability.toFixed(2) == 1.00){
             labelContainer.childNodes[0].innerHTML = "계란입니다."
         }
-        else if(prediction[1].className=="apple"&& prediction[1].probability.toFixed(2) == 1.00){
+        else if(prediction[1].className=="고추"&& prediction[1].probability.toFixed(2) == 1.00){
             labelContainer.childNodes[0].innerHTML = "고추입니다."
         }
-        else if(prediction[2].className=="apple"&& prediction[2].probability.toFixed(2) == 1.00){
+        else if(prediction[2].className=="양파"&& prediction[2].probability.toFixed(2) == 1.00){
             labelContainer.childNodes[0].innerHTML = "양파입니다."
         }
-        else if(prediction[3].className=="apple"&& prediction[3].probability.toFixed(2) == 1.00){
+        else if(prediction[3].className=="당근"&& prediction[3].probability.toFixed(2) == 1.00){
             labelContainer.childNodes[0].innerHTML = "당근입니다."
         }
-        else if(prediction[4].className=="apple"&& prediction[4].probability.toFixed(2) == 1.00){
+        else if(prediction[4].className=="대파"&& prediction[4].probability.toFixed(2) == 1.00){
             labelContainer.childNodes[0].innerHTML = "대파입니다."
         }
-        else if(prediction[5].className=="apple"&& prediction[5].probability.toFixed(2) == 1.00){
+        else if(prediction[5].className=="마늘"&& prediction[5].probability.toFixed(2) == 1.00){
             labelContainer.childNodes[0].innerHTML = "마늘입니다."
         }
         else{
